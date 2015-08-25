@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>border radius</title>
+</head>
+<body>
+    <style>
+    .demo1 {
+        width: 100px;
+        height: 100px;
+        background: lightblue;
+
+        border-radius: 20px/5px;
+    }
+    </style>
+    <div class="demo1"></div>
+
+    <p>
+        上述示例的 CSS 代码为：
+    </p>
+    <pre>
+        <code>
+            .demo1 {
+                width: 100px;
+                height: 100px;
+                background: lightblue;
+
+                border-radius: 20px/5px;
+            }
+        </code>
+    </pre>
+
+    <p>
+        border-radius 是可以通过`/`的形式来对某一个角设置一个椭圆弧的。
+    </p>
+    <p>
+        比如示例中的 `20px/5px` 的含义是：对于左上角的圆弧，圆心到上边框的距离是5px，到左边框的距离是20px；对于右上角的圆弧，圆心到上边框的距离是5px，到右边框的距离是20px；对于右下角的圆弧，圆心到下边框的距离是5px，到右边框的距离是20px；对于左下角的圆弧，圆心到下边框的距离是5px，到左边框的距离是20px。
+    </p>
+</body>
+</html>
