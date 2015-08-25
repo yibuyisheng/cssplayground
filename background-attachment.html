@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>background attachment</title>
+</head>
+<body>
+<style type="text/css">
+    .box {
+        border: 1px solid blue;
+    }
+    .demo1, .demo2, .demo3 {
+        width: 200px;
+        height: 100px;
+
+        color: red;
+
+        margin-top: 10px;
+        margin-left: 10px;
+
+        background: lightblue url(./imgs/1.jpg);
+        background-attachment: fixed;
+        overflow: scroll;
+    }
+
+    .demo2 {
+        background-attachment: scroll;
+    }
+
+    .demo3 {
+        background-attachment: local;
+    }
+</style>
+<div class="box">
+    <div class="demo1">
+        fixed<br>
+        fixed<br>
+        fixed<br>
+        fixed<br>
+        fixed<br>
+        fixed<br>
+        fixed<br>
+        fixed<br>
+    </div>
+</div>
+<div class="box">
+    <div class="demo2">
+        scroll<br>
+        scroll<br>
+        scroll<br>
+        scroll<br>
+        scroll<br>
+        scroll<br>
+        scroll<br>
+        scroll<br>
+    </div>
+</div>
+<div class="box">
+    <div class="demo3">
+        local<br>
+        local<br>
+        local<br>
+        local<br>
+        local<br>
+        local<br>
+        local<br>
+        local<br>
+        local<br>
+    </div>
+</div>
+<script type="text/javascript">
+    var demo1 = document.getElementsByClassName('demo1')[0];
+    var demo2 = document.getElementsByClassName('demo2')[0];
+    var demo3 = document.getElementsByClassName('demo3')[0];
+
+    document.addEventListener('keydown', function (event) {
+        var style = getComputedStyle(demo1);
+        var left = parseInt(style.marginLeft, 10) || 0;
+        var top = parseInt(style.marginTop, 10) || 0;
+        if (event.keyCode === 39) {
+            demo1.style.marginLeft = (left + 1) + 'px';
+            demo2.style.marginLeft = (left + 1) + 'px';
+            demo3.style.marginLeft = (left + 1) + 'px';
+        }
+        else if (event.keyCode === 37) {
+            demo1.style.marginLeft = (left - 1) + 'px'
+            demo2.style.marginLeft = (left - 1) + 'px';
+            demo3.style.marginLeft = (left - 1) + 'px';
+        }
+        else if (event.keyCode === 38) {
+            demo1.style.marginTop = (top - 1) + 'px';
+            demo2.style.marginTop = (top - 1) + 'px';
+            demo3.style.marginTop = (top - 1) + 'px';
+        }
+        else if (event.keyCode === 40) {
+            demo1.style.marginTop = (top + 1) + 'px';
+            demo2.style.marginTop = (top + 1) + 'px';
+            demo3.style.marginTop = (top + 1) + 'px';
+        }
+    });
+</script>
+<p>
+    可以按下键盘上的上下左右键感受一下变化。
+</p>
+<p>
+    TODO： local 究竟是什么效果？ <a href="http://www.w3.org/TR/css3-background/#the-background-attachment">W3C</a>
+</p>
+</body>
+</html>
