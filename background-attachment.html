@@ -19,6 +19,7 @@
 
         background: lightblue url(./imgs/1.jpg);
         background-attachment: fixed;
+        /*background-size: cover;*/
         overflow: scroll;
     }
 
@@ -103,6 +104,10 @@
 </p>
 <p>
     TODO： local 究竟是什么效果？ <a href="http://www.w3.org/TR/css3-background/#the-background-attachment">W3C</a>
+
+    <br>
+    <br>
+    观察到一个现象：当图片处于渲染中状态的时候，将鼠标移到 local 所在的块上面快速拨动滚轮，此时背景图片的位置会跟着滚动的位置而发生改变，但是图片渲染完成之后，就不会再改变了。测试浏览器为 Chrome 。
 </p>
 </body>
 </html>
