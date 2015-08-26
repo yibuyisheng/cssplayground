@@ -109,5 +109,22 @@
     <br>
     观察到一个现象：当图片处于渲染中状态的时候，将鼠标移到 local 所在的块上面快速拨动滚轮，此时背景图片的位置会跟着滚动的位置而发生改变，但是图片渲染完成之后，就不会再改变了。测试浏览器为 Chrome 。
 </p>
+<p>
+    经过测试，发现当前最新版本的 IE 、 firefox 都没有这个问题；而在 Chrome 下，在滚动方向放置多个 input ，然后切换 input 焦点，是可以达到效果的，这说明， Chrome 下的 local 效果依赖于焦点的获取。
+</p>
+
+<div class="box">
+    <div class="demo3">
+        <input type="text"><br>
+        <input type="text"><br>
+        <input type="text"><br>
+        <input type="text"><br>
+        <input type="text"><br>
+        <input type="text"><br>
+        <input type="text"><br>
+        <input type="text"><br>
+        <input type="text"><br>
+    </div>
+</div>
 </body>
 </html>
